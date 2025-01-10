@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LIVE TIMER</title>
+  <style>
+    body {
+      background: url('background.jpg') no-repeat center center fixed;
+      background-size: cover;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      color: black;
+      text-align: center;
+      margin: -70px 0 0 0;
+      padding: 0;
+      border-top: 50px;
+    }
+    h1 {
+      margin-top: 20%;
+      font-size: 50px;
+    }
+    #timer {
+      font-size: 40px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Live Timer</h1>
+  <p>Live! The present moment, has more value!</p>
+  <div id="timer"></div>
+
+  <script>
+    function updateTimer() {
+      const now = new Date();
+      const utcOffset = now.getTimezoneOffset() * 60000;
+      const istOffset = 5.5 * 60 * 60 * 1000; // IST is UTC+5:30
+      const istTime = new Date(now.getTime() + utcOffset + istOffset);
+
+      let hours = istTime.getHours();
+      const minutes = istTime.getMinutes().toString().padStart(2, '0');
+      const seconds = istTime.getSeconds().toString().padStart(2, '0');
+      const ampm = hours >= 12 ? 'PM' : 'AM';
+      hours = hours % 12 || 12;
+
+      const formattedTime = `${hours}:${minutes}:${seconds} ${ampm}`;
+      document.getElementById('timer').innerText = formattedTime;
+    }
+    setInterval(updateTimer, 1000);
+    updateTimer();
+  </script>
+</body>
+</html>
