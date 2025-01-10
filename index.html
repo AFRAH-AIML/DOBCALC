@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LIFE CLOCK</title>
+    <style>
+        body {
+            background-image: url(background.jpg);
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+        .card {
+            background-color: white;
+            background-image: url(background.jpg);
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            width: 300px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .card img {
+            width: 100%;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+        }
+        .card h3 {
+            color: #333;
+            margin: 10px 0;
+        }
+        .card p {
+            padding: 0 10px;
+            color: #666;
+        }
+        .card a {
+            display: block;
+            text-decoration: none;
+            color: white;
+            background-color: #007bff;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 4px;
+        }
+        .card a:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>LIFE CLOCK</h1>
+    <div class="container">
+        <div class="card">
+            <img src="background.jpg" alt="DOB Calculator">
+            <h3>DOB Calculator</h3>
+            <p>Calculate your age in minutes, hours, days, months, and years!</p>
+            <a href="dob_calculator.html">Go to DOB Calculator</a>
+        </div>
+        <div class="card">
+            <img src="background.jpg" alt="New Year Counter">
+            <h3>New Year Counter</h3>
+            <p>See the countdown to the New Year '26!</p>
+            <a href="new_year_counter.html">Go to New Year Counter</a>
+        </div>
+        <div class="card">
+            <img src="background.jpg" alt="Live Timer">
+            <h3>Live Timer</h3>
+            <p>Check the live timer showing current date and time.</p>
+            <a href="live_timer.html">Go to Live Timer</a>
+        </div>
+    </div>
+</body>
+</html>
